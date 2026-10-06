@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.js" integrity="sha512-jx7pKV1OCCwD8nJVKETycdimr+xPg3VCP0Wc5tX0RdpusPKEC72eB5cyqgT48K5HxbXvbxIc/oDVb70QMhSeLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>My to do</title>
+</head>
+<body>
+    <div class="wrap">
+
+        <aside class="leftSide">
+            <h2 class="brand">Tasks</h2>
+            <ul id="categoryList" class="categoryList"></ul>
+        </aside>
+
+        <main class="main">
+            <div class="top">
+                <h1 id="viewTitle">All</h1>
+                <button id="toggleBtn" class="primaryBtn" type="button" aria-expanded="false">+ New task</button>
+            </div>
+
+            <div class="bot">
+                <div class="righSide">
+
+                    <div id="addPanel" class="addPanel" style="display:none">
+                        <div id="inpCount" class="inpCount">
+                            <input id="input" type="text" placeholder="What needs to be done?">
+                            <div id="taskColor" class="taskColor" role="radiogroup" aria-label="Importance">
+                                <div id="easy" class="colorItem" data-color="#2f9e44" title="low" role="radio" aria-checked="false" tabindex="0"></div>
+                                <div id="mid" class="colorItem" data-color="#f2b705" title="Midle" role="radio" aria-checked="false" tabindex="0"></div>
+                                <div id="imp" class="colorItem" data-color="#e03131" title="Hight" role="radio" aria-checked="false" tabindex="0"></div>
+                            </div>
+                            <button id="addBtn" class="primaryBtn" type="button" disabled>Add Task</button>
+                        </div>
+                        <p class="hint"><Table>To add a task, select the importance.</Table></p>
+                    </div>
+
+                    <div id="taskCount" class="taskCount"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="overlay" aria-hidden="true">
+        <div class="modalBox" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h3 id="modalTitle">Where should the task be added?</h3>
+            <div id="modalCats" class="modalCats"></div>
+            <button id="cancelBtn" class="ghostBtn cancel" type="button">Сancel</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
